@@ -120,7 +120,7 @@ public class Menu {
 	public static void sobre() {// participantes
 		System.out.println("Cafeteria");
 		System.out.println("Camille Bueno: https://github.com/CamillePB");
-		System.out.println("Teste");
+		System.out.println("Teste ");
 	
 	}
 	
