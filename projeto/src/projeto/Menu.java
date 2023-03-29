@@ -160,7 +160,7 @@ public class Menu {
 		}
 	}
 	
-	public static void invalidMessage() {
+	public static void invalidMessage() {//mensagem de erro 
 		System.out.println(Cores.TEXT_WHITE_BOLD +"\nOpção Inválida! Tente novamente:\n");
 	}
 }
