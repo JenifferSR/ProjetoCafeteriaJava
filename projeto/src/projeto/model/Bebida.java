@@ -1,30 +1,6 @@
 package projeto.model;
 
-<<<<<<< HEAD
-public class Bebida extends Produto  {
-	
-private int temperatura;
-private int tamanho;
-public Bebida(int id, String nome, int quantidade, float preço, int temperatura, int tamanho) {
-	super(id, nome, quantidade);
-	this.temperatura = temperatura;
-	this.tamanho = tamanho;
-}
-public int getTemperatura() {
-	return temperatura;
-}
-public void setTemperatura(int temperatura) {
-	this.temperatura = temperatura;
-}
-public int getTamanho() {
-	return tamanho;
-}
-public void setTamanho(int tamanho) {
-	this.tamanho = tamanho;
-}
-=======
 public class Bebida extends Produto {
->>>>>>> 64c9fd8ffb6bc64fb753932c0b0bca582a9eadef
 
 	private int temperatura;
 	private int tamanho;

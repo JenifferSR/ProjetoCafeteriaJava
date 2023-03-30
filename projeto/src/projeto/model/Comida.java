@@ -39,22 +39,4 @@ public class Comida extends Produto {
 
 	// Gerenciar cardápio Comida
 	
-	public void editar() {
-		visualizar();
-		
-		System.out.println("*****************************************************");
-		System.out.println("              1 - Editar nome:                       ");
-		System.out.println("              2 - Editar quantidade:                 ");
-		System.out.println("              3 - Editar preço:                      ");
-		System.out.println("              4 - Editar tamanho:                    ");
-
-		Scanner scan = new Scanner(System.in);
-		
-		switch(scan.nextInt()) {
-			case 1 -> setNome(scan.next());
-			case 2 -> setQuantidade(scan.nextInt());
-			case 3 -> setPreço(scan.nextFloat());
-			case 4 -> setTamanho(scan.nextInt());
-		}
-	}
 }
