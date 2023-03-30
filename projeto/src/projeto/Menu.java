@@ -1,9 +1,11 @@
 package projeto;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import projeto.model.Produto;
 import projeto.util.Cores;
 
 public class Menu {
@@ -11,7 +13,9 @@ public class Menu {
 	public static void main(String[] args) {
 
 		Scanner leia = new Scanner(System.in);
-		int opcao, tipo;
+		int opcao, tipo, temperatura, tamanho;
+		
+
 		while (true) {
 
 			System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
@@ -44,18 +48,116 @@ public class Menu {
 
 			switch (opcao) {// cardapio ou estoque
 			case 1 -> {// cardapio
-				System.out.println("Cardapio");
 
+				do {
+					System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+					System.out.println("                                                     ");
+					System.out.println("                 JAVA COFFEE CARDÁPIO                ");
+					System.out.println("                                                     ");
+					System.out.println("*****************************************************");
+					System.out.println("                                                     ");
+					System.out.println("            1 - Bebida                               ");
+					System.out.println("            2 - Comida                               ");
+					System.out.println("            0 - Encerrar Compra                      ");
+					System.out.println("                                                     ");
+					System.out.println("*****************************************************");
+					System.out.println("Entre com a opção desejada:                          ");
+					System.out.println("                                                     " + Cores.TEXT_RESET);
+					tipo = leia.nextInt();
+
+					if (tipo == 1) {
+						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+						System.out.println("                                                     ");
+						System.out.println("             OPÇÕES DE BEBIDAS                       ");
+						System.out.println("                                                     ");
+						System.out.println("*****************************************************");
+						System.out.println("                                                     ");
+						System.out.println("            1 - Café Filtrado    R$ 6,50             ");
+						System.out.println("            2 - Café com Leite   R$ 7,00             ");
+						System.out.println("            3 - Capuccino        R$ 7,90             ");
+						System.out.println("            4 - Chá de Camomila  R$ 8,00             ");
+						System.out.println("            5 - Chá Mate         R$ 8,00             ");
+						System.out.println("            6 - Chá de Camomila  R$ 8,00             ");
+						System.out.println("            7 - Suco de Laranja  R$ 7,50             ");
+						System.out.println("            8 - Suco de Morango  R$ 7,00             ");
+						System.out.println("            9 - Suco de Maracujá R$ 7,00             ");
+						System.out.println("                                                     ");
+						System.out.println("*****************************************************");
+						System.out.println("Entre com a opção desejada:                          ");
+						System.out.println("                                                     " + Cores.TEXT_RESET);
+						tipo = leia.nextInt();
+
+						// Switch case
+
+						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+						System.out.println("                                                     ");
+						System.out.println("              TAMANHO DA BEBIDA                      ");
+						System.out.println("                                                     ");
+						System.out.println("*****************************************************");
+						System.out.println("                                                     ");
+						System.out.println("            1 - Grande           R$ 7,00             ");
+						System.out.println("            2 - Médio            R$ 5,00             ");
+						System.out.println("            3 - Pequeno          R$ 2,00             ");
+						System.out.println("                                                     ");
+						System.out.println("*****************************************************");
+						System.out.println("Entre com a opção desejada:                          ");
+						System.out.println("                                                     " + Cores.TEXT_RESET);
+						tamanho = leia.nextInt();
+
+						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+						System.out.println("                                                     ");
+						System.out.println("              TEMPERATURA DA BEBIDA                  ");
+						System.out.println("                                                     ");
+						System.out.println("*****************************************************");
+						System.out.println("                                                     ");
+						System.out.println("            1 - Quente                               ");
+						System.out.println("            2 - Gelada                               ");
+						System.out.println("                                                     ");
+						System.out.println("*****************************************************");
+						System.out.println("Entre com a opção desejada:                          ");
+						System.out.println("                                                     " + Cores.TEXT_RESET);
+						temperatura = leia.nextInt();
+
+						// Validação se a bebida existe realmente
+						if (tipo > 0 && tipo < 10 && tamanho > 0 && tamanho < 4 && temperatura > 0 && temperatura < 3) {
+
+					
+
+						} else {
+							System.out.println("Essa bebida não existe, tente novamente!");
+						}
+
+					} else if (tipo == 2) {
+
+						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+						System.out.println("                                                     ");
+						System.out.println("                 COMIDA                              ");
+						System.out.println("                                                     ");
+						System.out.println("*****************************************************");
+						System.out.println("                                                     ");
+						System.out.println("            1 - Brownie          R$ 5,00             ");
+						System.out.println("            2 - Coxinha          R$ 5,00             ");
+						System.out.println("            3 - Pão de Queijo    R$ 4,00             ");
+						System.out.println("            4 - Croissant        R$ 5,00             ");
+						System.out.println("                                                     ");
+						System.out.println("*****************************************************");
+						System.out.println("Entre com a opção desejada:                          ");
+						System.out.println("                                                     " + Cores.TEXT_RESET);
+						tipo = leia.nextInt();
+
+					} else if (tipo < 0 && tipo > 2) {
+						invalidMessage();
+					}
+
+				} while (tipo != 0);
+				System.out.println("Compra Finalizada.");
+				sobre();
+				System.exit(0);
 			}
 
 			case 2 -> {// estoque
 				while (true) {
-<<<<<<< HEAD
- 					System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND
-							+ "*****************************************************");
-=======
 					System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
->>>>>>> 38502a8165b76bdbd59847ee2412f240c0efd312
 					System.out.println("                                                     ");
 					System.out.println("                 Java Coffee Estoque                 ");
 					System.out.println("                                                     ");
@@ -74,18 +176,18 @@ public class Menu {
 
 					try {// projeto
 						tipo = leia.nextInt();
-						if (tipo == 0) {
+						if (tipo < 0) {
 							invalidMessage();
 						}
 						if (tipo > 6) {
 							invalidMessage();
 						}
-						
+
 					} catch (InputMismatchException e) {
 						System.out.println(Cores.TEXT_WHITE_BOLD + "\nOpção Inválida! Digite valores inteiros:\n");
 						leia.nextLine();
 						tipo = 0;
-						
+
 					}
 
 					switch (tipo) {// opções do estoque
@@ -135,12 +237,10 @@ public class Menu {
 						leia.close();
 						System.exit(0);
 					}
-					
 
 					}
 				}
 			}
-		
 
 			}
 		}
@@ -153,6 +253,11 @@ public class Menu {
 		System.out.println("*****************************************************");
 		System.out.println("                                                     ");
 		System.out.println("Camille Bueno: https://github.com/CamillePB");
+		System.out.println("Stephany Camily: https://github.com/stefygrr");
+		System.out.println("Jeanine Santiago: https://github.com/Jeanine19");
+		System.out.println("Guilherme Henrique: https://github.com/guilhermehenrique10 ");
+		System.out.println("Jeniffer Souza Ribeiro: https://github.com/JenifferSR ");
+		System.out.println("Letícia Queiroga: https://github.com/Letixs ");
 
 	}
 
@@ -164,8 +269,8 @@ public class Menu {
 			System.out.println("Erro de digitação");
 		}
 	}
-	
-	public static void invalidMessage() {//mensagem de erro 
-		System.out.println(Cores.TEXT_WHITE_BOLD +"\nOpção Inválida! Tente novamente:\n");
+
+	public static void invalidMessage() {// mensagem de erro
+		System.out.println(Cores.TEXT_WHITE_BOLD + "\nOpção Inválida! Tente novamente:\n");
 	}
 }

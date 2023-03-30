@@ -4,13 +4,13 @@ public abstract class Produto {
 private int id;
 private String nome;
 private int quantidade;
-private float preço;
+private float preco;
 
-public Produto(int id, String nome, int quantidade, float preço) {
+public Produto(int id, String nome, int quantidade, float preco) {
 	this.id = id;
 	this.nome = nome;
 	this.quantidade = quantidade;
-	this.preço = preço;
+	this.preco = preco;
 }
 
 public int getId() {
@@ -37,19 +37,19 @@ public void setQuantidade(int quantidade) {
 	this.quantidade = quantidade;
 }
 
-public float getPreço() {
-	return preço;
+public float getPreco() {
+	return preco;
 }
 
-public void setPreço(float preço) {
-	this.preço = preço;
+public void setPreco(float preco) {
+	this.preco = preco;
 }
 public void visualizar() {
 	
 	System.out.println("            ID do produto : " + this.id);
 	System.out.println("            Nome do produto escolido : " + this.nome);
 	System.out.println("            Quantidade de produtos escolhidos : " + this.quantidade);
-	System.out.println("            Total do pedido : " + this.preço);
+	System.out.println("            Total do pedido : " + this.preco);
 	
 }
 
