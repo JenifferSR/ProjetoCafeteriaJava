@@ -7,7 +7,7 @@ public class Produto {
 	private int id;
 	private String nome;
 	private int quantidade;
-	private float preço;
+	private float preco;
 	private ArrayList<Comida> comidas = new ArrayList<Comida>();
 	private ArrayList<Bebida> bebidas = new ArrayList<Bebida>();
 
@@ -43,12 +43,12 @@ public class Produto {
 		this.quantidade = quantidade;
 	}
 
-	public float getPreço() {
-		return preço;
+	public float getPreco() {
+		return preco;
 	}
 
-	public void setPreço(float preço) {
-		this.preço = preço;
+	public void setPreço(float preco) {
+		this.preco = preco;
 	}
 
 	public ArrayList<Comida> getComidas() {
@@ -59,6 +59,14 @@ public class Produto {
 		this.comidas = comidas;
 	}
 	
+	public ArrayList<Bebida> getBebidas() {
+		return bebidas;
+	}
+
+	public void setBebidas(ArrayList<Bebida> bebidas) {
+		this.bebidas = bebidas;
+	}
+
 	public void listarTodos() {
 		
 		if(comidas.size() > 0) {
@@ -138,7 +146,7 @@ public class Produto {
 		System.out.println("            ID do produto : " + this.id);
 		System.out.println("            Nome do produto escolido : " + this.nome);
 		System.out.println("            Quantidade de produtos escolhidos : " + this.quantidade);
-		System.out.println("            Total do pedido : " + this.preço);
+		System.out.println("            Total do pedido : " + this.preco);
 
 	}
 }
