@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import projeto.model.Produto;
 import projeto.util.Cores;
 
 public class Menu {
@@ -89,7 +90,6 @@ public class Menu {
 						System.out.println("                                                     ");
 						System.out.println("                  Adicionar itens:                   ");
 						System.out.println("                                                     ");
-
 						keyPress();
 					}
 

@@ -5,7 +5,7 @@ public class Comida extends Produto {
 	private int tamanho;
 
 	public Comida(int id, String nome, int quantidade, float preço, int tamanho) {
-		super(id, nome, quantidade, preço);
+		super(id, nome, quantidade);
 		this.tamanho = tamanho;
 	}
 
