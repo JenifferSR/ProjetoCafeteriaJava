@@ -31,7 +31,7 @@ public class EstoqueController implements EstoqueRepository {
 		this.lstComidas = lstComidas;
 	}
 
-	//@Override
+	// @Override
 	public void listarTodos() {
 		if (lstComidas.size() > 0) {
 			System.out.println("-------------------- Comidas --------------------");
@@ -54,7 +54,6 @@ public class EstoqueController implements EstoqueRepository {
 
 	@Override
 	public void buscarComida(int id) {
-		// Percorrendo comidas procurando o id
 		for (var item : lstComidas) {
 			if (item.getId() == id) {
 				item.visualizar();
@@ -65,7 +64,6 @@ public class EstoqueController implements EstoqueRepository {
 
 	@Override
 	public void buscarBebida(int id) {
-		// Percorrendo bebidas procurando o id
 		for (var item : lstBebidas) {
 			if (item.getId() == id) {
 				item.visualizar();
@@ -76,7 +74,6 @@ public class EstoqueController implements EstoqueRepository {
 
 	@Override
 	public Produto editarComida(int id) {
-		// Percorrendo comidas procurando o id para editar
 		for (Produto item : lstComidas) {
 			if (item.getId() == id) {
 				item.editar();
@@ -87,14 +84,19 @@ public class EstoqueController implements EstoqueRepository {
 	}
 
 	@Override
-	public void editarBebida(String produto) {
-		// TODO Auto-generated method stub
+	public Bebida editarBebida(int id) {
+		for (Bebida item : lstBebidas) {
+			if (item.getId() == id) {
+				item.editarB();
+				return item;
+			}
+		}
+		return null;
 
 	}
 
 	@Override
 	public void deletarComida(int id) {
-		// Percorrendo comidas procurando o id para deletar
 		for (var item : lstComidas) {
 			if (item.getId() == id) {
 				getLstComidas().remove(item);
@@ -105,10 +107,15 @@ public class EstoqueController implements EstoqueRepository {
 
 	@Override
 	public void deletarBebida(int id) {
-		// TODO Auto-generated method stub
+		for (var item : lstBebidas) {
+			if (item.getId() == id ) {
+				getLstBebidas().remove(item);
+				return;
+			}
+		}
 
 	}
 
-	//Métodos auxiliares
-	
-	}
+	// Métodos auxiliares
+
+}
