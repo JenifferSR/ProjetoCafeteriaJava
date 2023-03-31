@@ -1,6 +1,5 @@
 package projeto.model;
 
-<<<<<<< HEAD
 public abstract class Produto {
 private int id;
 private String nome;
@@ -50,7 +49,7 @@ public void visualizar() {
 	System.out.println("            Quantidade de produtos escolhidos : " + this.quantidade);
 	
 }
-=======
+
 import java.util.ArrayList;
 
 public class Produto {
@@ -61,7 +60,6 @@ public class Produto {
 	private float preco;
 	private ArrayList<Comida> comidas = new ArrayList<Comida>();
 	private ArrayList<Bebida> bebidas = new ArrayList<Bebida>();
->>>>>>> 64c9fd8ffb6bc64fb753932c0b0bca582a9eadef
 
 	/*
 	public Produto(int id, String nome, int quantidade, float preço) {
