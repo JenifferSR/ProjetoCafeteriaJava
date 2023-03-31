@@ -1,9 +1,6 @@
 package projeto.model;
 
-<<<<<<< HEAD
-import java.util.ArrayList;
-=======
->>>>>>> 156bee35fe0833229bee8c86d7a0f6ba8d7ddc41
+
 import java.util.Scanner;
 
 public class Produto {
@@ -12,18 +9,21 @@ public class Produto {
 	private String nome;
 	private int quantidade;
 	private float preco;
-<<<<<<< HEAD
 
-	private ArrayList<Comida> comidas = new ArrayList<Comida>();
-	private ArrayList<Bebida> bebidas = new ArrayList<Bebida>();
 
-=======
->>>>>>> 156bee35fe0833229bee8c86d7a0f6ba8d7ddc41
+	
 
-	/*
-	 * public Produto(int id, String nome, int quantidade, float preço) { this.id =
-	 * id; this.nome = nome; this.quantidade = quantidade; this.preço = preço; }
-	 */
+	
+	public Produto(int id, String nome, int quantidade, float preco) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.quantidade = quantidade;
+		this.preco = preco;
+	}
+	public Produto() {
+		
+	}
 
 	public int getId() {
 		return id;
@@ -61,7 +61,7 @@ public class Produto {
 		System.out.println("                                                                ");
 		System.out.println("            ID do produto : " + this.id);
 		System.out.println("            Nome do produto escolido : " + this.nome);
-		System.out.println("            Quantidade de produtos escolhidos : " + this.quantidade);
+		System.out.println("            Quantidade de produtos em estoque : " + this.quantidade);
 		System.out.println("            Preço do produto : " + this.preco );
 		System.out.println("                                                                ");
 	}
@@ -82,4 +82,5 @@ public class Produto {
 		case 3 -> setPreco(scan.nextFloat());
 		}
 	}
+
 }

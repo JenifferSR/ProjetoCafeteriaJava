@@ -7,11 +7,16 @@ public class Bebida extends Produto {
 	private int temperatura;
 	private int tamanho;
 
-	/*
-	 * public Bebida(int id, String nome, int quantidade, float preço, int
-	 * temperatura, int tamanho) { super(id, nome, quantidade, preço);
-	 * this.temperatura = temperatura; this.tamanho = tamanho; }
-	 */
+	
+	  public Bebida(int id, String nome, int quantidade, float preço, int
+	  temperatura, int tamanho) { super(id, nome, quantidade, preço);
+	  this.temperatura = temperatura; this.tamanho = tamanho; }
+	 
+	  public Bebida() {
+		  
+	  }
+	  
+	  
 	public int getTemperatura() {
 		return temperatura;
 	}
