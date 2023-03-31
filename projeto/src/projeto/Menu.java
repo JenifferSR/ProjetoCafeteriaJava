@@ -1,15 +1,14 @@
 package projeto;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import projeto.controller.EstoqueController;
 import projeto.model.Bebida;
-import projeto.model.Comida;
 import projeto.model.Produto;
 import projeto.util.Cores;
-import java.io.IOException;
-import java.util.InputMismatchException;
 
 public class Menu {
 
@@ -40,7 +39,7 @@ public class Menu {
 			System.out.println("Entre com a opção desejada:                          ");
 			System.out.println("                                                     " + Cores.TEXT_RESET);
 
-			try {// projeto
+			try {
 				opcao = leia.nextInt();
 				if (opcao == 0) {
 					invalidMessage();
@@ -55,8 +54,8 @@ public class Menu {
 				opcao = 0;
 			}
 
-			switch (opcao) {// cardapio ou estoque
-			case 1 -> {// cardapio
+			switch (opcao) {
+			case 1 -> {
 
 				do {
 					System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
@@ -96,8 +95,6 @@ public class Menu {
 						System.out.println("                                                     " + Cores.TEXT_RESET);
 						tipo = leia.nextInt();
 
-						// Switch case
-
 						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
 						System.out.println("                                                     ");
 						System.out.println("              TAMANHO DA BEBIDA                      ");
@@ -127,7 +124,6 @@ public class Menu {
 						System.out.println("                                                     " + Cores.TEXT_RESET);
 						temperatura = leia.nextInt();
 
-						// Validação se a bebida existe realmente
 						if (tipo > 0 && tipo < 10 && tamanho > 0 && tamanho < 4 && temperatura > 0 && temperatura < 3) {
 
 						} else {
@@ -144,7 +140,7 @@ public class Menu {
 						System.out.println("                                                     ");
 						System.out.println("            1 - Brownie          R$ 5,00             ");
 						System.out.println("            2 - Coxinha          R$ 5,00             ");
-						System.out.println("            3 - Pão de Queijo    R$ 4,00             ");
+						System.out.println("            3 - Pão              R$ 4,00             ");
 						System.out.println("            4 - Croissant        R$ 5,00             ");
 						System.out.println("                                                     ");
 						System.out.println("*****************************************************");
@@ -162,11 +158,8 @@ public class Menu {
 				System.exit(0);
 			}
 
-			case 2 -> {// estoque
+			case 2 -> {
 				while (true) {
-
-					System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND
-							+ "*****************************************************");
 
 					System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
 					System.out.println("                                                     ");
@@ -185,7 +178,7 @@ public class Menu {
 					System.out.println("Entre com a opção desejada:                          ");
 					System.out.println("                                                     " + Cores.TEXT_RESET);
 
-					try {// projeto
+					try {
 						tipo = leia.nextInt();
 						if (tipo < 0) {
 							invalidMessage();
@@ -201,37 +194,61 @@ public class Menu {
 
 					}
 
-					switch (tipo) {// opções do estoque
-					case 1 -> {// Add itens
+					switch (tipo) {
+					case 1 -> {
 						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
 						System.out.println("                                                     ");
 						System.out.println("                  Adicionar itens:                   ");
 						System.out.println("                                                     ");
 
-						Produto comida = new Produto();
+						System.out.println(" Comida(1) ou Bebida(2) : ");
+						escolha = leia.nextInt();
+						if (escolha == 1) {
 
-						// Colocando variaveis comida
-						comida.setId(++idC);
+							Produto comida = new Produto();
+							comida.setId(++idC);
 
-						System.out.println("Digite o nome: ");
-						comida.setNome(leia.next());
+							System.out.println("Digite o nome: ");
+							comida.setNome(leia.next());
 
-						System.out.println("Digite a quantidade do estoque: ");
-						comida.setQuantidade(leia.nextInt());
+							System.out.println("Digite a quantidade do estoque: ");
+							comida.setQuantidade(leia.nextInt());
 
-						System.out.println("Digite o preço unitário: ");
-						comida.setPreco(leia.nextFloat());
+							System.out.println("Digite o preço unitário: ");
+							comida.setPreco(leia.nextFloat());
 
-						// Adicionando comida preenchida pelo usuário na lista de comida
-						lstComidas2.add(comida);
+							lstComidas2.add(comida);
 
-						// Setando Lista de comidas dentro de Produtos
-						produto.setLstComidas(lstComidas2);
+							produto.setLstComidas(lstComidas2);
+							
+						} else {
+							Bebida bebida = new Bebida();
+							bebida.setId(++idB);
+
+							System.out.println("Digite o nome da bebida: ");
+							bebida.setNome(leia.next());
+
+							System.out.println("Digite a quantidade do estoque: ");
+							bebida.setQuantidade(leia.nextInt());
+
+							System.out.println("Digite o preço unitário: ");
+							bebida.setPreco(leia.nextFloat());
+
+							System.out.println("Digiti o Tamanho 1-Pequeno, 2-Médio ou 3-Grande");
+							bebida.setTamanho(leia.nextInt());
+
+							System.out.println("Temperatura 1-Quente ou 2-Frio : ");
+							bebida.setTemperatura(leia.nextInt());
+
+							lstBebidas2.add(bebida);
+
+							produto.setLstBebidas(lstBebidas2);
+
+						}
 
 						keyPress();
 					}
-
-					case 2 -> {// listar tudo
+					case 2 -> {
 						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
 						System.out.println("                                                     ");
 						System.out.println("               Listar todos os itens:                ");
@@ -241,7 +258,7 @@ public class Menu {
 
 						keyPress();
 					}
-					case 3 -> {// buscar
+					case 3 -> {
 						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
 						System.out.println("                                                     ");
 						System.out.println("                    Buscar itens:                    ");
@@ -259,7 +276,7 @@ public class Menu {
 						}
 						keyPress();
 					}
-					case 4 -> {// editar
+					case 4 -> {
 						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
 						System.out.println("                                                     ");
 						System.out.println("                    Editar itens:                    ");
@@ -272,13 +289,13 @@ public class Menu {
 						if (opcaoEditar == 1) {
 							produto.editarComida(leia.nextInt());
 						} else {
-							// produto.editarBebida(leia.nextInt());
+							produto.editarBebida(leia.nextInt());
 						}
 
 						keyPress();
 
 					}
-					case 5 -> {// remover
+					case 5 -> {
 						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
 						System.out.println("                                                     ");
 						System.out.println("                    Apagar itens:                    ");
@@ -297,7 +314,7 @@ public class Menu {
 						keyPress();
 
 					}
-					case 6 -> {// sair
+					case 6 -> {
 						sobre();
 						leia.close();
 						System.exit(0);
@@ -312,7 +329,7 @@ public class Menu {
 
 	}
 
-	public static void sobre() {// participantes
+	public static void sobre() {
 		System.out.println(Cores.TEXT_WHITE_BOLD + "*****************************************************");
 		System.out.println("                   Projeto Java Coffee                  ");
 		System.out.println("*****************************************************");
@@ -325,16 +342,16 @@ public class Menu {
 		System.out.println("Letícia Queiroga: https://github.com/Letixs ");
 	}
 
-	public static void keyPress() {// parar o menu até apertar enter
+	public static void keyPress() {
 		try {
 			System.out.println(Cores.TEXT_RESET + "Pressione Enter para continuar...");
-			System.in.read();// tecla enter
+			System.in.read();
 		} catch (IOException e) {
 			System.out.println("Erro de digitação");
 		}
 	}
 
-	public static void invalidMessage() {// mensagem de erro
+	public static void invalidMessage() {
 		System.out.println(Cores.TEXT_WHITE_BOLD + "\nOpção Inválida! Tente novamente:\n");
 	}
 }
