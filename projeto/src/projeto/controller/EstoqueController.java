@@ -79,7 +79,7 @@ public class EstoqueController implements EstoqueRepository {
 		// Percorrendo comidas procurando o id para editar
 		for (Produto item : lstComidas) {
 			if (item.getId() == id) {
-				item.editarC();
+				item.editar();
 				return item;
 			}
 		}

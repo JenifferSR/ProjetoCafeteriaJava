@@ -39,7 +39,6 @@ public class Comida extends Produto {
 
 	// Gerenciar cardápio Comida
 	
-<<<<<<< HEAD
 	public void editar() {
 		visualizar();
 		
@@ -58,6 +57,4 @@ public class Comida extends Produto {
 			case 4 -> setTamanho(scan.nextInt());
 		}
 	}
-=======
->>>>>>> 04c7568318066363802dd43bdef9a4bb55ba04e4
 }

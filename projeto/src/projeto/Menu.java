@@ -165,12 +165,12 @@ public class Menu {
 			case 2 -> {// estoque
 				while (true) {
 
-<<<<<<< HEAD
+
  					System.out.println(Cores.TEXT_YELLOW 
-=======
-					System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND
->>>>>>> 04c7568318066363802dd43bdef9a4bb55ba04e4
-							+ "*****************************************************");
+
+					System.out.println(Cores.TEXT_GREEN S
+
+				   System.out.println(Cores.TEXT_YELLOW+ "*****************************************************");
 
 					System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
 					System.out.println("                                                     ");
@@ -225,14 +225,11 @@ public class Menu {
 
 						System.out.println("Digite o preço unitário: ");
 						comida.setPreco(leia.nextFloat());
-<<<<<<< HEAD
+
 						
 						System.out.println("Digite o tamanho (1 - Pequeno 2 - Grande): ");
 						comida.setTamanho(leia.nextInt());
 						
-=======
-
->>>>>>> 04c7568318066363802dd43bdef9a4bb55ba04e4
 						// Adicionando comida preenchida pelo usuário na lista de comida
 						lstComidas2.add(comida);
 
