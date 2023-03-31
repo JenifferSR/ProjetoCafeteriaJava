@@ -10,7 +10,7 @@ public class Comida extends Produto {
 
 	/*
 	public Comida(int id, String nome, int quantidade, float preço, int tamanho) {
-		super(id, nome, quantidade, preço);
+		super(id, nome, quantidade);
 		this.tamanho = tamanho;
 	}*/
 	
@@ -39,6 +39,7 @@ public class Comida extends Produto {
 
 	// Gerenciar cardápio Comida
 	
+<<<<<<< HEAD
 	public void editar() {
 		visualizar();
 		
@@ -57,4 +58,6 @@ public class Comida extends Produto {
 			case 4 -> setTamanho(scan.nextInt());
 		}
 	}
+=======
+>>>>>>> 04c7568318066363802dd43bdef9a4bb55ba04e4
 }

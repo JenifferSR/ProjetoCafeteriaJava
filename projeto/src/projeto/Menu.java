@@ -2,6 +2,9 @@ package projeto;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import projeto.controller.EstoqueController;
+import projeto.model.Bebida;
 import projeto.model.Comida;
 import projeto.model.Produto;
 import projeto.util.Cores;
@@ -13,12 +16,15 @@ public class Menu {
 	public static void main(String[] args) {
 
 		Scanner leia = new Scanner(System.in);
-		Produto produtos = new Produto();
-		ArrayList<Comida> lstComidas = new ArrayList<Comida>();
-		
-		int opcao = 0, tipo = 0, id = 0, tamanho = 0, temperatura = 0;
-		
-	
+
+		int opcao = 0, tipo = 0, id = 0, tamanho = 0, temperatura = 0, escolha = 0;
+
+		EstoqueController produto = new EstoqueController();
+
+		ArrayList<Produto> lstComidas2 = new ArrayList<Produto>();
+		ArrayList<Bebida> lstBebidas2 = new ArrayList<Bebida>();
+		int idC = 0, idB = 0;
+
 		while (true) {
 
 			System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
@@ -124,8 +130,6 @@ public class Menu {
 						// Validação se a bebida existe realmente
 						if (tipo > 0 && tipo < 10 && tamanho > 0 && tamanho < 4 && temperatura > 0 && temperatura < 3) {
 
-					
-
 						} else {
 							System.out.println("Essa bebida não existe, tente novamente!");
 						}
@@ -161,7 +165,11 @@ public class Menu {
 			case 2 -> {// estoque
 				while (true) {
 
+<<<<<<< HEAD
  					System.out.println(Cores.TEXT_YELLOW 
+=======
+					System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND
+>>>>>>> 04c7568318066363802dd43bdef9a4bb55ba04e4
 							+ "*****************************************************");
 
 					System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
@@ -203,30 +211,33 @@ public class Menu {
 						System.out.println("                                                     ");
 						System.out.println("                  Adicionar itens:                   ");
 						System.out.println("                                                     ");
-						
-						// Instanciando o objeto de comida
-						Comida comida = new Comida();
-						
+
+						Produto comida = new Produto();
+
 						// Colocando variaveis comida
-						comida.setId(++id);
-						
+						comida.setId(++idC);
+
 						System.out.println("Digite o nome: ");
 						comida.setNome(leia.next());
-						
+
 						System.out.println("Digite a quantidade do estoque: ");
 						comida.setQuantidade(leia.nextInt());
-						
+
 						System.out.println("Digite o preço unitário: ");
 						comida.setPreco(leia.nextFloat());
+<<<<<<< HEAD
 						
 						System.out.println("Digite o tamanho (1 - Pequeno 2 - Grande): ");
 						comida.setTamanho(leia.nextInt());
 						
+=======
+
+>>>>>>> 04c7568318066363802dd43bdef9a4bb55ba04e4
 						// Adicionando comida preenchida pelo usuário na lista de comida
-						lstComidas.add(comida);
-						
+						lstComidas2.add(comida);
+
 						// Setando Lista de comidas dentro de Produtos
-						produtos.setComidas(lstComidas);
+						produto.setLstComidas(lstComidas2);
 
 						keyPress();
 					}
@@ -236,8 +247,8 @@ public class Menu {
 						System.out.println("                                                     ");
 						System.out.println("               Listar todos os itens:                ");
 						System.out.println("                                                     ");
-						
-						produtos.listarTodos();
+
+						produto.listarTodos();
 
 						keyPress();
 					}
@@ -246,10 +257,17 @@ public class Menu {
 						System.out.println("                                                     ");
 						System.out.println("                    Buscar itens:                    ");
 						System.out.println("                                                     ");
-						
-						System.out.println("Digite o id do produto: ");
-						produtos.buscarVisualizar(leia.nextInt());						
 
+						System.out.println("Editar comida(1) ou bebida(2)?");
+						escolha = leia.nextInt();
+
+						System.out.println("Digite o id do produto: ");
+
+						if (escolha == 1) {
+							produto.buscarComida(leia.nextInt());
+						} else {
+							produto.buscarBebida(leia.nextInt());
+						}
 						keyPress();
 					}
 					case 4 -> {// editar
@@ -257,17 +275,17 @@ public class Menu {
 						System.out.println("                                                     ");
 						System.out.println("                    Editar itens:                    ");
 						System.out.println("                                                     ");
-						
+
 						System.out.println("Editar comida(1) ou bebida(2)?");
 						int opcaoEditar = leia.nextInt();
-						
-						System.out.println("Digite o id que deseja buscar: ");					
-						if(opcaoEditar == 1) {
-							produtos.buscarComidaEditar(leia.nextInt());							
+
+						System.out.println("Digite o id que deseja buscar: ");
+						if (opcaoEditar == 1) {
+							produto.editarComida(leia.nextInt());
 						} else {
-							produtos.buscarBebidaEditar(leia.nextInt());
+							// produto.editarBebida(leia.nextInt());
 						}
-						
+
 						keyPress();
 
 					}
@@ -279,12 +297,12 @@ public class Menu {
 
 						System.out.println("Apagar comida(1) ou bebida(2)?");
 						int opcaoApagar = leia.nextInt();
-						
-						System.out.println("Digite o id que deseja deletar: ");					
-						if(opcaoApagar == 1) {
-							produtos.deletarComida(leia.nextInt());							
+
+						System.out.println("Digite o id que deseja deletar: ");
+						if (opcaoApagar == 1) {
+							produto.deletarComida(leia.nextInt());
 						} else {
-							// produtos.buscarBebidaEditar(leia.nextInt());
+							produto.deletarBebida(leia.nextInt());
 						}
 
 						keyPress();
@@ -295,7 +313,7 @@ public class Menu {
 						leia.close();
 						System.exit(0);
 					}
-		
+
 					}
 				}
 			}
@@ -304,6 +322,7 @@ public class Menu {
 		}
 
 	}
+
 	public static void sobre() {// participantes
 		System.out.println(Cores.TEXT_WHITE_BOLD + "*****************************************************");
 		System.out.println("                   Projeto Java Coffee                  ");
