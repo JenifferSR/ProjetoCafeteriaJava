@@ -1,4 +1,5 @@
 package projeto.repository;
+import projeto.model.Bebida;
 import projeto.model.Produto;
 
 public interface EstoqueRepository {
@@ -10,7 +11,7 @@ public void buscarBebida(int id);
 public void deletarComida(int id);
 public void deletarBebida(int id);
 public Produto editarComida(int id);
-public void editarBebida(String produto);
+public Bebida editarBebida(int id);
 
 
 }
