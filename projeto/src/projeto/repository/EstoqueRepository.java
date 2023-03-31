@@ -1,4 +1,4 @@
-package venda;
+package projeto.repository;
 import projeto.model.Produto;
 
 public interface EstoqueRepository {
