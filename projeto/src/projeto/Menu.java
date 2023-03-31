@@ -26,7 +26,7 @@ public class Menu {
 
 		while (true) {
 
-			System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+			System.out.println(Cores.TEXT_YELLOW_BOLD + "*****************************************************");
 			System.out.println("                                                     ");
 			System.out.println("                     Java Coffee                     ");
 			System.out.println("                                                     ");
@@ -58,7 +58,7 @@ public class Menu {
 			case 1 -> {
 
 				do {
-					System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+					System.out.println(Cores.TEXT_YELLOW_BOLD + "*****************************************************");
 					System.out.println("                                                     ");
 					System.out.println("                 JAVA COFFEE CARDÁPIO                ");
 					System.out.println("                                                     ");
@@ -74,7 +74,7 @@ public class Menu {
 					tipo = leia.nextInt();
 
 					if (tipo == 1) {
-						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+						System.out.println(Cores.TEXT_YELLOW_BOLD + "*****************************************************");
 						System.out.println("                                                     ");
 						System.out.println("             OPÇÕES DE BEBIDAS                       ");
 						System.out.println("                                                     ");
@@ -95,7 +95,7 @@ public class Menu {
 						System.out.println("                                                     " + Cores.TEXT_RESET);
 						tipo = leia.nextInt();
 
-						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+						System.out.println(Cores.TEXT_YELLOW_BOLD + "*****************************************************");
 						System.out.println("                                                     ");
 						System.out.println("              TAMANHO DA BEBIDA                      ");
 						System.out.println("                                                     ");
@@ -110,7 +110,7 @@ public class Menu {
 						System.out.println("                                                     " + Cores.TEXT_RESET);
 						tamanho = leia.nextInt();
 
-						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+						System.out.println(Cores.TEXT_YELLOW_BOLD + "*****************************************************");
 						System.out.println("                                                     ");
 						System.out.println("              TEMPERATURA DA BEBIDA                  ");
 						System.out.println("                                                     ");
@@ -132,7 +132,7 @@ public class Menu {
 
 					} else if (tipo == 2) {
 
-						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+						System.out.println(Cores.TEXT_YELLOW_BOLD + "*****************************************************");
 						System.out.println("                                                     ");
 						System.out.println("                 COMIDA                              ");
 						System.out.println("                                                     ");
@@ -140,7 +140,7 @@ public class Menu {
 						System.out.println("                                                     ");
 						System.out.println("            1 - Brownie          R$ 5,00             ");
 						System.out.println("            2 - Coxinha          R$ 5,00             ");
-						System.out.println("            3 - Pão              R$ 4,00             ");
+						System.out.println("            3 - Pão de queijo    R$ 4,00             ");
 						System.out.println("            4 - Croissant        R$ 5,00             ");
 						System.out.println("                                                     ");
 						System.out.println("*****************************************************");
@@ -161,7 +161,7 @@ public class Menu {
 			case 2 -> {
 				while (true) {
 
-					System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+					System.out.println(Cores.TEXT_YELLOW_BOLD + "*****************************************************");
 					System.out.println("                                                     ");
 					System.out.println("                 Java Coffee Estoque                 ");
 					System.out.println("                                                     ");
@@ -196,7 +196,7 @@ public class Menu {
 
 					switch (tipo) {
 					case 1 -> {
-						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+						System.out.println(Cores.TEXT_YELLOW_BOLD + "*****************************************************");
 						System.out.println("                                                     ");
 						System.out.println("                  Adicionar itens:                   ");
 						System.out.println("                                                     ");
@@ -208,8 +208,11 @@ public class Menu {
 							Produto comida = new Produto();
 							comida.setId(++idC);
 
-							System.out.println("Digite o nome: ");
-							comida.setNome(leia.next());
+							System.out.println("Digite o nome da comida : ");
+							leia.nextLine();
+							comida.setNome(leia.nextLine());
+							
+
 
 							System.out.println("Digite a quantidade do estoque: ");
 							comida.setQuantidade(leia.nextInt());
@@ -226,6 +229,7 @@ public class Menu {
 							bebida.setId(++idB);
 
 							System.out.println("Digite o nome da bebida: ");
+							leia.nextLine();
 							bebida.setNome(leia.next());
 
 							System.out.println("Digite a quantidade do estoque: ");
@@ -249,7 +253,7 @@ public class Menu {
 						keyPress();
 					}
 					case 2 -> {
-						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+						System.out.println(Cores.TEXT_YELLOW_BOLD + "*****************************************************");
 						System.out.println("                                                     ");
 						System.out.println("               Listar todos os itens:                ");
 						System.out.println("                                                     ");
@@ -259,7 +263,7 @@ public class Menu {
 						keyPress();
 					}
 					case 3 -> {
-						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+						System.out.println(Cores.TEXT_YELLOW_BOLD + "*****************************************************");
 						System.out.println("                                                     ");
 						System.out.println("                    Buscar itens:                    ");
 						System.out.println("                                                     ");
@@ -277,7 +281,7 @@ public class Menu {
 						keyPress();
 					}
 					case 4 -> {
-						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+						System.out.println(Cores.TEXT_YELLOW_BOLD + "*****************************************************");
 						System.out.println("                                                     ");
 						System.out.println("                    Editar itens:                    ");
 						System.out.println("                                                     ");
@@ -296,7 +300,7 @@ public class Menu {
 
 					}
 					case 5 -> {
-						System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
+						System.out.println(Cores.TEXT_YELLOW_BOLD + "*****************************************************");
 						System.out.println("                                                     ");
 						System.out.println("                    Apagar itens:                    ");
 						System.out.println("                                                     ");

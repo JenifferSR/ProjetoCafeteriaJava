@@ -9,10 +9,10 @@ public class Produto {
 	private int quantidade;
 	private float preco;
 
-	/*
-	 * public Produto(int id, String nome, int quantidade, float preço) { this.id =
-	 * id; this.nome = nome; this.quantidade = quantidade; this.preço = preço; }
-	 */
+
+	//public Produto(int id, String nome, int quantidade) { this.id =
+	//id; this.nome = nome; this.quantidade = quantidade; }
+	
 
 	public int getId() {
 		return id;
@@ -50,7 +50,7 @@ public class Produto {
 		System.out.println("                                                                ");
 		System.out.println("            ID do produto : " + this.id);
 		System.out.println("            Nome do produto escolido : " + this.nome);
-		System.out.println("            Quantidade de produtos escolhidos : " + this.quantidade);
+		System.out.println("            Quantidade de produtos em estoque : " + this.quantidade);
 		System.out.println("            Preço do produto : " + this.preco );
 		System.out.println("                                                                ");
 	}
