@@ -161,7 +161,7 @@ public class Menu {
 			case 2 -> {// estoque
 				while (true) {
 
- 					System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND
+ 					System.out.println(Cores.TEXT_YELLOW 
 							+ "*****************************************************");
 
 					System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
@@ -217,7 +217,7 @@ public class Menu {
 						comida.setQuantidade(leia.nextInt());
 						
 						System.out.println("Digite o preço unitário: ");
-						comida.setPreço(leia.nextFloat());
+						comida.setPreco(leia.nextFloat());
 						
 						System.out.println("Digite o tamanho (1 - Pequeno 2 - Grande): ");
 						comida.setTamanho(leia.nextInt());

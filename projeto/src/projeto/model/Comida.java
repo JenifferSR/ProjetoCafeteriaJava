@@ -53,7 +53,7 @@ public class Comida extends Produto {
 		switch(scan.nextInt()) {
 			case 1 -> setNome(scan.next());
 			case 2 -> setQuantidade(scan.nextInt());
-			case 3 -> setPreço(scan.nextFloat());
+			case 3 -> setPreco(scan.nextFloat());
 			case 4 -> setTamanho(scan.nextInt());
 		}
 	}

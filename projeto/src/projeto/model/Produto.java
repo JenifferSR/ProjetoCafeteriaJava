@@ -47,7 +47,7 @@ public class Produto {
 		return preco;
 	}
 
-	public void setPreço(float preco) {
+	public void setPreco(float preco) {
 		this.preco = preco;
 	}
 
