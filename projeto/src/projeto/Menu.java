@@ -22,6 +22,8 @@ public class Menu {
 
 		ArrayList<Produto> lstComidas2 = new ArrayList<Produto>();
 		ArrayList<Bebida> lstBebidas2 = new ArrayList<Bebida>();
+		ArrayList<Produto> carrinho2 = new ArrayList<Produto>();
+		
 		int idC = 4, idB = 3;
 
 		Produto comida1 = new Produto(1, "Brownie", 10, 5.00f);
@@ -173,7 +175,7 @@ public class Menu {
 
 						System.out.println(Cores.TEXT_YELLOW_BOLD + "*****************************************************");
 						System.out.println("                                                     ");
-						System.out.println("                 COMIDA                              ");
+						System.out.println("                      COMIDA                         ");
 						System.out.println("                                                     ");
 						System.out.println("*****************************************************");
 						System.out.println("                                                     ");
@@ -186,12 +188,34 @@ public class Menu {
 						System.out.println("Entre com a opção desejada:                          ");
 						System.out.println("                                                     " + Cores.TEXT_RESET);
 						tipo = leia.nextInt();
+						
+						switch (tipo) {
+						case 1 -> {
+						carrinho2.add(comida1);
+						produto.setCarrinho(carrinho2);
+						
+						}
+						case 2 -> {
+							carrinho2.add(comida2);
+							produto.setCarrinho(carrinho2);
+						}
+						case 3 -> {
+							carrinho2.add(comida3);
+							produto.setCarrinho(carrinho2);
+							}
+						case 4 -> {
+							carrinho2.add(comida4);
+							produto.setCarrinho(carrinho2);
+							}
+						}
 
 					} else if (tipo < 0 && tipo > 2) {
 						invalidMessage();
 					}
-
+                       
 				} while (tipo != 0);
+				
+				produto.somarCarrinho();
 				System.out.println("Compra Finalizada.");
 				sobre();
 				System.exit(0);
@@ -199,19 +223,16 @@ public class Menu {
 
 			case 2 -> {
 				while (true) {
+ 				
 
-<<<<<<< HEAD
+				    System.out.println(Cores.TEXT_YELLOW+ "***********************************************************");
 
- 					System.out.println(Cores.TEXT_YELLOW 
+					System.out.println(Cores.TEXT_YELLOW + "**********************************************************");
 
-					System.out.println(Cores.TEXT_GREEN S
-
-				   System.out.println(Cores.TEXT_YELLOW+ "*****************************************************");
-
-					System.out.println(Cores.TEXT_YELLOW + "*****************************************************");
-=======
 					System.out.println(Cores.TEXT_YELLOW_BOLD + "*****************************************************");
->>>>>>> 29d1e207fee1ef319f469167ac97c7726979b424
+
+					
+					System.out.println("*****************************************************");
 					System.out.println("                                                     ");
 					System.out.println("                 Java Coffee Estoque                 ");
 					System.out.println("                                                     ");
@@ -251,7 +272,7 @@ public class Menu {
 						System.out.println("                  Adicionar itens:                   ");
 						System.out.println("                                                     ");
 
-						System.out.println(" Comida(1) ou Bebida(2) : ");
+						System.out.println("Comida(1) ou Bebida(2) : ");
 						escolha = leia.nextInt();
 						if (escolha == 1) {
 
@@ -264,23 +285,19 @@ public class Menu {
 							
 
 
-<<<<<<< HEAD
+
 						System.out.println("Digite o preço unitário: ");
 						comida.setPreco(leia.nextFloat());
-
-						
-						System.out.println("Digite o tamanho (1 - Pequeno 2 - Grande): ");
-						comida.setTamanho(leia.nextInt());
 						
 						// Adicionando comida preenchida pelo usuário na lista de comida
 						lstComidas2.add(comida);
-=======
+
 							System.out.println("Digite a quantidade do estoque: ");
 							comida.setQuantidade(leia.nextInt());
 
 							System.out.println("Digite o preço unitário: ");
 							comida.setPreco(leia.nextFloat());
->>>>>>> 29d1e207fee1ef319f469167ac97c7726979b424
+
 
 							lstComidas2.add(comida);
 
@@ -413,11 +430,12 @@ public class Menu {
 			System.out.println(Cores.TEXT_RESET + "Pressione Enter para continuar...");
 			System.in.read();
 		} catch (IOException e) {
-			System.out.println("Erro de digitação");
+			System.out.println("Erro de digitação. ");
 		}
 	}
 
 	public static void invalidMessage() {
 		System.out.println(Cores.TEXT_WHITE_BOLD + "\nOpção Inválida! Tente novamente:\n");
 	}
+	
 }

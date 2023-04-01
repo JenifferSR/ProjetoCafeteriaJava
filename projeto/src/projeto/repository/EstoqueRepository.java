@@ -12,7 +12,7 @@ public void deletarComida(int id);
 public void deletarBebida(int id);
 public Produto editarComida(int id);
 public Bebida editarBebida(int id);
-
+public float somarCarrinho();
 
 }
 

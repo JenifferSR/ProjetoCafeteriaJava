@@ -1,10 +1,7 @@
 package projeto.model;
 
-<<<<<<< HEAD
 import java.util.ArrayList;
-=======
 
->>>>>>> 29d1e207fee1ef319f469167ac97c7726979b424
 import java.util.Scanner;
 
 public class Produto {
@@ -13,19 +10,10 @@ public class Produto {
 	private String nome;
 	private int quantidade;
 	private float preco;
-<<<<<<< HEAD
 
-	
 	private ArrayList<Comida> comidas = new ArrayList<Comida>();
 	private ArrayList<Bebida> bebidas = new ArrayList<Bebida>();
 
-=======
->>>>>>> 29d1e207fee1ef319f469167ac97c7726979b424
-
-
-	
-
-	
 	public Produto(int id, String nome, int quantidade, float preco) {
 		super();
 		this.id = id;

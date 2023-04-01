@@ -14,6 +14,7 @@ public class EstoqueController implements EstoqueRepository {
 
 	private ArrayList<Bebida> lstBebidas = new ArrayList<Bebida>();
 	private ArrayList<Produto> lstComidas = new ArrayList<Produto>();
+	ArrayList<Produto> carrinho = new ArrayList<Produto>();
 
 	public ArrayList<Bebida> getLstBebidas() {
 		return lstBebidas;
@@ -29,6 +30,14 @@ public class EstoqueController implements EstoqueRepository {
 
 	public void setLstComidas(ArrayList<Produto> lstComidas) {
 		this.lstComidas = lstComidas;
+	}
+	
+	public ArrayList<Produto> getCarrinho() {
+		return carrinho;
+	}
+
+	public void setCarrinho(ArrayList<Produto> carrinho) {
+		this.carrinho = carrinho;
 	}
 
 	// @Override
@@ -76,7 +85,7 @@ public class EstoqueController implements EstoqueRepository {
 	public Produto editarComida(int id) {
 		for (Produto item : lstComidas) {
 			if (item.getId() == id) {
-				item.editar();
+				item.editarC();
 				return item;
 			}
 		}
@@ -91,6 +100,7 @@ public class EstoqueController implements EstoqueRepository {
 				return item;
 			}
 		}
+		
 		return null;
 
 	}
@@ -117,5 +127,18 @@ public class EstoqueController implements EstoqueRepository {
 	}
 
 	// Métodos auxiliares
+	
+	@Override
+	public float somarCarrinho() {
+		float total = 0;
+		float soma;
+			for (var item : carrinho) {
+				soma = item.getPreco();
+				  total += soma;
+			
+			}
+			
+			return total;
+	}
 
 }
